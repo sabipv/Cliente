@@ -5,7 +5,7 @@ function doublePipe(...args) {
     let arrayFunciones = [...args];
     return (valor) => { 
         arrayFunciones.forEach(element => {
-            for (let i=0; i<=2; i++)
+            for (let i=0; i<=1; i++)
                 valor = element(valor);
         })
         return valor;

@@ -1,11 +1,11 @@
 function createIDGenerator (longitud) {
-let contador = 1;
-return () => {
-    let numCero = longitud - contador.toString().length;
-    let construyeID = "0".repeat(numCero);
-    construyeID += contador;
-    contador++;
-    console.log(construyeID);
+    let contador = 1;
+    return () => {
+        let numCero = longitud - contador.toString().length;
+        let construyeID = "0".repeat(numCero);
+        construyeID += contador;
+        contador++;
+        console.log(construyeID);
     }
 }
 
