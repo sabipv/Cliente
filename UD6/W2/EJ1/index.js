@@ -14,7 +14,7 @@ async function movimientos (url){
 
 async function traduccion (dato){
     const movimiento = await fetch(dato);
-    if (movimiento.status !== 200) throw `HTTP error 2: ${movimiento.status}`
+    if (movimiento.status !== 200) throw new Error(`HTTP error 2: ${movimiento.status}`)
     const movimientoJson = await movimiento.json();
     //console.log(movimientoJson['names']['5']['name'])
     return movimientoJson['names']['5']['name']
