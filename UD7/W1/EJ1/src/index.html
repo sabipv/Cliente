@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        br {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        rojo {
+            color: red;
+        }
+
+        verde {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="index.html" method="post" id="formularioId" enctype="application/x-www-form-urlencoded">
+        <label>Introduce tu PIN</label> <br>
+        <input type="text" name="PIN" maxlength="5" id="inputId"> 
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <div>
+        <br>
+        <div class="resultado"></div>
+    </div>
+</body>
+</html>
