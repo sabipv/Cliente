@@ -2,6 +2,7 @@ import "./styles.css";
 const formulario = document.getElementById('formulari');
 const input = document.getElementById('input');
 const listaTareas = document.getElementById('listaTareas');
+let arrayTareas = [];
 
 function AnyadeTareaLista (tarea){
     const item = document.createElement('li');
@@ -10,23 +11,22 @@ function AnyadeTareaLista (tarea){
 }
 
 function publicaLista(){
-    let lista = [];
-    lista = JSON.parse(localStorage.getItem('tareas'));
-    lista.forEach(tarea => AnyadeTareaLista(tarea));
+    if (!arrayTareas)
+        arrayTareas = JSON.parse(localStorage.getItem('tareas'));
+    arrayTareas.forEach(tarea => AnyadeTareaLista(tarea));
 }
 
 function anyadeTarea(tarea){
-    let lista = []
     AnyadeTareaLista(tarea);
-    lista = JSON.parse(localStorage.getItem('tareas'));
-    lista.push(tarea);
+    arrayTareas.push(tarea);
     localStorage.setItem('tareas', JSON.stringify(tarea));
 }
 
 formulario.addEventListener('submit', (event) => {
   event.preventDefault();
-  anyadeTarea(input.value);
+  if(input.value)
+    anyadeTarea(input.value);
   input.value = '';
 });
 
-loadTasks();
+publicaLista();
